@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mAbout"
+        android:title="@string/menu_about"
+        android:orderInCategory="100"></item>
+    <item
+        android:id="@+id/mSettings"
+        android:title="@string/menu_settings"
+        android:orderInCategory="101"></item>
+    <item
+        android:id="@+id/mRanking"
+        android:title="Ranking"
+        app:showAsAction="always"
+        android:icon="@drawable/christmas_star"></item>
+</menu>

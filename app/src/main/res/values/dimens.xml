@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_padding">16dp</dimen>
+    <dimen name="height_foto_mascota">300dp</dimen>
+    <dimen name="info_padding">10dp</dimen>
+    <dimen name="like_tamaño">36dp</dimen>
+    <dimen name="nombre_mascota_size">25sp</dimen>
+    <dimen name="nombre_mascota_margin">16dp</dimen>
+</resources>
