@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.proyectomascotas.adapter.MascotaAdapter;
+import com.example.proyectomascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class FavoritasActivity extends AppCompatActivity {

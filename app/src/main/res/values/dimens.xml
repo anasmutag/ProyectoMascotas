@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_padding">16dp</dimen>
+    <dimen name="form_padding">20dp</dimen>
     <dimen name="height_foto_mascota">300dp</dimen>
     <dimen name="info_padding">10dp</dimen>
     <dimen name="like_tamaño">36dp</dimen>
     <dimen name="nombre_mascota_size">25sp</dimen>
     <dimen name="nombre_mascota_margin">16dp</dimen>
+    <dimen name="top_et">10dp</dimen>
+    <dimen name="texto_encabezado">26sp</dimen>
+    <dimen name="texto_bio">16sp</dimen>
+    <dimen name="top_texto_bio">3dp</dimen>
+    <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="size_imagen_perfil">140dp</dimen>
+    <dimen name="radius_imagen_perfil">10dp</dimen>
+    <dimen name="border_imagen_perfil">8dp</dimen>
+    <dimen name="width_fotos_perfil">100dp</dimen>
+    <dimen name="height_fotos_perfil">130dp</dimen>
+    <dimen name="size_foto_mascota">90dp</dimen>
+    <dimen name="size_hards_mascota">40dp</dimen>
+    <dimen name="padding_hards_mascota">5dp</dimen>
+    <dimen name="text_hards_mascota">18sp</dimen>
+    <dimen name="size_imagen_hards_mascota">25dp</dimen>
+    <dimen name="size_linea_view">1dp</dimen>
 </resources>

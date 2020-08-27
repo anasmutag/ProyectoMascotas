@@ -1,21 +1,26 @@
-package com.example.proyectomascotas;
+package com.example.proyectomascotas.pojo;
 
 import java.io.Serializable;
 
 public class Mascota implements Serializable {
     private String nombre;
-    private String hards;
+    private int hards;
     private int foto;
 
     public Mascota(int foto, String nombre) {
         this.foto = foto;
         this.nombre = nombre;
-        this.hards = "0";
+        this.hards = 0;
     }
 
-    public Mascota(int foto, String nombre, String hards) {
+    public Mascota(int foto, String nombre, int hards) {
         this.foto = foto;
         this.nombre = nombre;
+        this.hards = hards;
+    }
+
+    public Mascota(int foto, int hards) {
+        this.foto = foto;
         this.hards = hards;
     }
 
@@ -27,11 +32,11 @@ public class Mascota implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getHards() {
+    public int getHards() {
         return hards;
     }
 
-    public void setHards(String hards) {
+    public void setHards(int hards) {
         this.hards = hards;
     }
 

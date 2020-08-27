@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv_contacto"
+    android:layout_width="@dimen/width_fotos_perfil"
+    android:layout_height="@dimen/height_fotos_perfil"
+    android:layout_marginBottom="@dimen/main_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgFotoMascotaF"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_foto_mascota"
+            android:src="@drawable/mascota01"
+            android:scaleType="centerCrop"></ImageView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_hards_mascota"
+            android:padding="@dimen/padding_hards_mascota"
+            android:background="@color/colorPrimary"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/tvHardsF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textSize="@dimen/text_hards_mascota"
+                    android:textColor="@color/colorBlanco"
+                    android:layout_marginRight="@dimen/nombre_mascota_margin"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"></TextView>
+                <ImageView
+                    android:id="@+id/imgHardMascotaF"
+                    android:layout_width="@dimen/size_imagen_hards_mascota"
+                    android:layout_height="@dimen/size_imagen_hards_mascota"
+                    android:src="@drawable/dog_bone"
+                    android:layout_gravity="center_vertical"></ImageView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

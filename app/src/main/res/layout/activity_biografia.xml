@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/main_padding"
+        tools:context=".BiografiaActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_biografia"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/texto_encabezado"
+            android:textStyle="bold"></TextView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile"
+            android:layout_marginTop="@dimen/form_padding"></ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_biografia"
+            android:layout_marginTop="@dimen/form_padding"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/texto_encabezado"
+            android:textStyle="bold"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profesion_biografia"
+            android:layout_marginTop="@dimen/top_et"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/texto_bio"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/universidad_biografia"
+            android:layout_marginTop="@dimen/top_texto_bio"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/texto_bio"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nacionalidad_biografia"
+            android:layout_marginTop="@dimen/top_texto_bio"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/texto_bio"></TextView>
+    </LinearLayout>
+</RelativeLayout>
