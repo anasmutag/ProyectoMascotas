@@ -3,6 +3,7 @@ package com.example.proyectomascotas.pojo;
 import java.io.Serializable;
 
 public class Mascota implements Serializable {
+    private int id;
     private String nombre;
     private int hards;
     private int foto;
@@ -22,6 +23,18 @@ public class Mascota implements Serializable {
     public Mascota(int foto, int hards) {
         this.foto = foto;
         this.hards = hards;
+    }
+
+    public Mascota() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {

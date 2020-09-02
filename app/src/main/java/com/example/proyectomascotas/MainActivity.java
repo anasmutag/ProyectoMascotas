@@ -37,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
         setUpViewPager();
-
-        /*if (toolBar != null) {
-            setSupportActionBar(toolBar);
-        }*/
     }
 
     private ArrayList<Fragment> agregarFragment() {

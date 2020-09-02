@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.proyectomascotas.db.ConstructorMascotas;
 import com.example.proyectomascotas.pojo.Mascota;
 import com.example.proyectomascotas.R;
 
@@ -45,12 +46,12 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         mascotaViewHolder.imgLikeMascota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(activity, "Like " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
 
-                hard = mascota.getHards();
-                mascota.setHards(hard + 1);
+                constructorMascotas.darLikeMascota(mascota);
+                mascotaViewHolder.tvHards.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
 
-                mascotaViewHolder.tvHards.setText(Integer.toString(mascota.getHards()));
+                Toast.makeText(activity, "Diste like a " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
             }
         });
     }
