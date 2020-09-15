@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectomascotas.R;
 import com.example.proyectomascotas.pojo.Mascota;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,12 @@ public class FotosAdapter extends RecyclerView.Adapter<FotosAdapter.FotosViewHol
     public void onBindViewHolder(@NonNull final FotosAdapter.FotosViewHolder fotosViewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
 
-        fotosViewHolder.imgFotoMascotaF.setImageResource(mascota.getFoto());
+        //fotosViewHolder.imgFotoMascotaF.setImageResource(mascota.getFoto());
+
+        Picasso.get()
+                .load(mascota.getFotoP())
+                .into(fotosViewHolder.imgFotoMascotaF);
+
         fotosViewHolder.tvHardsF.setText(Integer.toString(mascota.getHards()));
     }
 

@@ -11,6 +11,7 @@
     <string name="nombre_mascota_08">Silver</string>
     <string name="menu_contacto">Contacto</string>
     <string name="menu_acerca">Acerca de</string>
+    <string name="menu_configurar">Configurar Cuenta</string>
     <string name="mascotas_favoritas">favoritas</string>
     <string name="campo_nombre">Nombre Completo</string>
     <string name="campo_email">Correo Electrónico</string>
@@ -22,6 +23,7 @@
     <string name="universidad_biografia">Universidad de Nariño</string>
     <string name="nacionalidad_biografia">Pasto - Nariño - Colombia</string>
     <string name="contactanos">Contactános</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_configuracion">Petagram</string>
+    <string name="campo_usuario_cuenta">Escribe tu usuario</string>
+    <string name="texto_guardar_cuenta">Guardar Cuenta</string>
 </resources>

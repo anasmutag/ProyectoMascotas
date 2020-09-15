@@ -78,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentB);
 
                 break;
+            case R.id.mConfigurar:
+                Intent intentC = new Intent(this, ConfigurarActivity.class);
+
+                startActivity(intentC);
+
+                break;
             case R.id.mRanking:
                 favoritas = new ArrayList<Mascota>();
 

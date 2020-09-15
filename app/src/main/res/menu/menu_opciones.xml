@@ -10,9 +10,13 @@
         android:title="@string/menu_acerca"
         android:orderInCategory="101"></item>
     <item
+        android:id="@+id/mConfigurar"
+        android:title="@string/menu_configurar"
+        android:orderInCategory="102"></item>
+    <item
         android:id="@+id/mRanking"
         android:title="Ranking"
-        android:orderInCategory="102"
+        android:orderInCategory="103"
         app:showAsAction="always"
         android:icon="@drawable/christmas_star"></item>
 </menu>

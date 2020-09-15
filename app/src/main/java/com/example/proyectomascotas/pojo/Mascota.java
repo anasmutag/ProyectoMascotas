@@ -4,12 +4,20 @@ import java.io.Serializable;
 
 public class Mascota implements Serializable {
     private int id;
+    private String idP;
     private String nombre;
     private int hards;
     private int foto;
+    private String fotoP;
 
     public Mascota(int foto, String nombre) {
         this.foto = foto;
+        this.nombre = nombre;
+        this.hards = 0;
+    }
+
+    public Mascota(String fotoP, String nombre) {
+        this.fotoP = fotoP;
         this.nombre = nombre;
         this.hards = 0;
     }
@@ -20,8 +28,19 @@ public class Mascota implements Serializable {
         this.hards = hards;
     }
 
+    public Mascota(String fotoP, String nombre, int hards) {
+        this.fotoP = fotoP;
+        this.nombre = nombre;
+        this.hards = hards;
+    }
+
     public Mascota(int foto, int hards) {
         this.foto = foto;
+        this.hards = hards;
+    }
+
+    public Mascota(String fotoP, int hards) {
+        this.fotoP = fotoP;
         this.hards = hards;
     }
 
@@ -59,5 +78,21 @@ public class Mascota implements Serializable {
 
     public void setFoto(int foto) {
         this.foto = foto;
+    }
+
+    public String getIdP() {
+        return idP;
+    }
+
+    public void setIdP(String idP) {
+        this.idP = idP;
+    }
+
+    public String getFotoP() {
+        return fotoP;
+    }
+
+    public void setFotoP(String fotoP) {
+        this.fotoP = fotoP;
     }
 }

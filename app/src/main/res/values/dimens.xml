@@ -23,4 +23,8 @@
     <dimen name="text_hards_mascota">18sp</dimen>
     <dimen name="size_imagen_hards_mascota">25dp</dimen>
     <dimen name="size_linea_view">1dp</dimen>
+    <dimen name="texto_titulo_configuracion">30sp</dimen>
+    <dimen name="padding_campo_usuario_cuenta">35dp</dimen>
+    <dimen name="margin_campo_usuario_cuenta">50dp</dimen>
+    <dimen name="margin_guardar_cuenta">125dp</dimen>
 </resources>
