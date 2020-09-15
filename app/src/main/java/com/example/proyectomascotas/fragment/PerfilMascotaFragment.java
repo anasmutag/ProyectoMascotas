@@ -34,15 +34,6 @@ public class PerfilMascotaFragment extends Fragment implements IPerfilMascotaFra
         presenter = new PerfilMascotaFragmentPresenter(this, getContext());
 
         return v;
-
-        /*GridLayoutManager glm = new GridLayoutManager(getContext(), 3);
-
-        rvFotosPerfil.setLayoutManager(glm);
-
-        inicializarListaFotos();
-        inicializarAdaptadorFotos();
-
-        return v;*/
     }
 
     @Override
@@ -63,21 +54,4 @@ public class PerfilMascotaFragment extends Fragment implements IPerfilMascotaFra
     public void inicializarAdaptadorRV(FotosAdapter adaptador) {
         rvFotosPerfil.setAdapter(adaptador);
     }
-
-    /*public void inicializarAdaptadorFotos() {
-        adaptador = new FotosAdapter(mascotas, getActivity());
-
-        rvFotosPerfil.setAdapter(adaptador);
-    }
-
-    public void inicializarListaFotos() {
-        mascotas = new ArrayList<Mascota>();
-
-        mascotas.add(new Mascota(R.drawable.mascota01,5));
-        mascotas.add(new Mascota(R.drawable.mascota02,3));
-        mascotas.add(new Mascota(R.drawable.mascota04,1));
-        mascotas.add(new Mascota(R.drawable.mascota05,8));
-        mascotas.add(new Mascota(R.drawable.mascota07,4));
-        mascotas.add(new Mascota(R.drawable.mascota08,4));
-    }*/
 }
