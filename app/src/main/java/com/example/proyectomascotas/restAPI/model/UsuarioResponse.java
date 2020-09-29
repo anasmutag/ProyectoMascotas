@@ -1,16 +1,26 @@
 package com.example.proyectomascotas.restAPI.model;
 
 public class UsuarioResponse {
+    private String id;
     private String id_dispositivo;
     private String id_usuario_instagram;
 
-    public UsuarioResponse(String id_dispositivo, String id_usuario_instagram) {
+    public UsuarioResponse(String id, String id_dispositivo, String id_usuario_instagram) {
+        this.id = id;
         this.id_dispositivo = id_dispositivo;
         this.id_usuario_instagram = id_usuario_instagram;
     }
 
     public UsuarioResponse() {
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getId_dispositivo() {

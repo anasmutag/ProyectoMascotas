@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
                 UsuarioResponse usuarioResponse = response.body();
 
+                Log.d("ID_FIREBASE", usuarioResponse.getId());
                 Log.d("ID_DISPOSITIVO", usuarioResponse.getId_dispositivo());
                 Log.d("ID_USUARIO_INSTAGRAM", usuarioResponse.getId_usuario_instagram());
             }
@@ -172,4 +173,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
