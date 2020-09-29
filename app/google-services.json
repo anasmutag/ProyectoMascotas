@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1026935313691",
+    "firebase_url": "https://mascotas-f5f08.firebaseio.com",
+    "project_id": "mascotas-f5f08",
+    "storage_bucket": "mascotas-f5f08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026935313691:android:dde1c8f01a39295ef3efbe",
+        "android_client_info": {
+          "package_name": "com.example.proyectomascotas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026935313691-4eqm2jki491mk6c55g730irbei532h3v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proyectomascotas",
+            "certificate_hash": "89bc808a9478ba90d2352227ca764962ef3467c7"
+          }
+        },
+        {
+          "client_id": "1026935313691-n73u2miteos08v2vpab2b6gqjeruq1ru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxfMcHmWgysZ75dGGI2c2zOnHyeW_X0vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026935313691-n73u2miteos08v2vpab2b6gqjeruq1ru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

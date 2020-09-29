@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,12 +16,26 @@ import com.example.proyectomascotas.adapter.PageAdapter;
 import com.example.proyectomascotas.fragment.PerfilMascotaFragment;
 import com.example.proyectomascotas.fragment.RecyclerViewFragment;
 import com.example.proyectomascotas.pojo.Mascota;
+import com.example.proyectomascotas.restAPI.ConstantesRestAPI;
+import com.example.proyectomascotas.restAPI.IEndpointsAPI;
+import com.example.proyectomascotas.restAPI.adapter.RestAPIAdapter;
+import com.example.proyectomascotas.restAPI.model.UsuarioResponse;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "NotificationIDToken";
     ArrayList<Mascota> favoritas;
 
     private Toolbar toolBar;
@@ -31,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( this,  new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                String token = instanceIdResult.getToken();
+
+                Log.d("Token", token);
+            }
+        });
 
         toolBar = (Toolbar) findViewById(R.id.toolBar);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
@@ -84,6 +108,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentC);
 
                 break;
+            case R.id.mNotificaciones:
+                FirebaseInstanceId.getInstance().getInstanceId()
+                        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                                if (!task.isSuccessful()) {
+                                    Log.w(TAG, "getInstanceId failed", task.getException());
+                                    return;
+                                }
+
+                                String id_dispositivo = task.getResult().getToken();
+
+                                enviarTokenRegistro(ConstantesRestAPI.ID_USER_INSTAGRAM, id_dispositivo);
+                            }
+                        });
+
+                break;
             case R.id.mRanking:
                 favoritas = new ArrayList<Mascota>();
 
@@ -107,5 +148,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void enviarTokenRegistro(String id_usuario_instagram, String id_dispositivo) {
+        Log.d(TAG, id_dispositivo);
+
+        RestAPIAdapter restAPIAdapter = new RestAPIAdapter();
+        IEndpointsAPI iEndpoints = restAPIAdapter.establecerConexionRestAPI();
+        Call<UsuarioResponse> usuarioResponseCall = iEndpoints.registrarTokenID(id_usuario_instagram, id_dispositivo);
+
+        usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
+            @Override
+            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                UsuarioResponse usuarioResponse = response.body();
+
+                Log.d("ID_DISPOSITIVO", usuarioResponse.getId_dispositivo());
+                Log.d("ID_USUARIO_INSTAGRAM", usuarioResponse.getId_usuario_instagram());
+            }
+
+            @Override
+            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+                Log.e("Error -> ", t.toString());
+            }
+        });
     }
 }

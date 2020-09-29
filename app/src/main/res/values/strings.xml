@@ -26,4 +26,5 @@
     <string name="titulo_configuracion">Petagram</string>
     <string name="campo_usuario_cuenta">Escribe tu usuario</string>
     <string name="texto_guardar_cuenta">Guardar Cuenta</string>
+    <string name="menu_notificaciones">Recibir Notificaciones</string>
 </resources>
