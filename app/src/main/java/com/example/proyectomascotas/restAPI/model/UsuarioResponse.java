@@ -1,12 +1,12 @@
 package com.example.proyectomascotas.restAPI.model;
 
 public class UsuarioResponse {
-    private String id;
+    private String id_firebase;
     private String id_dispositivo;
     private String id_usuario_instagram;
 
-    public UsuarioResponse(String id, String id_dispositivo, String id_usuario_instagram) {
-        this.id = id;
+    public UsuarioResponse(String id_firebase, String id_dispositivo, String id_usuario_instagram) {
+        this.id_firebase = id_firebase;
         this.id_dispositivo = id_dispositivo;
         this.id_usuario_instagram = id_usuario_instagram;
     }
@@ -15,12 +15,12 @@ public class UsuarioResponse {
 
     }
 
-    public String getId() {
-        return id;
+    public String getId_firebase() {
+        return id_firebase;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_firebase(String id_firebase) {
+        this.id_firebase = id_firebase;
     }
 
     public String getId_dispositivo() {
