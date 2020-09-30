@@ -27,4 +27,6 @@
     <string name="campo_usuario_cuenta">Escribe tu usuario</string>
     <string name="texto_guardar_cuenta">Guardar Cuenta</string>
     <string name="menu_notificaciones">Recibir Notificaciones</string>
+    <string name="mensaje_agregar_cuenta">Agregar cuenta en "Configurar Cuenta" en el menú de opciones</string>
+    <string name="agregar_cuenta_firebase">Cuenta de Instagram agregada con exito a FireBase</string>
 </resources>

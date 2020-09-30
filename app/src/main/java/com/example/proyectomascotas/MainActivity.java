@@ -6,11 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.proyectomascotas.adapter.PageAdapter;
 import com.example.proyectomascotas.fragment.PerfilMascotaFragment;
@@ -109,20 +112,27 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.mNotificaciones:
-                FirebaseInstanceId.getInstance().getInstanceId()
-                        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                                if (!task.isSuccessful()) {
-                                    Log.w(TAG, "getInstanceId failed", task.getException());
-                                    return;
+                SharedPreferences sharedPreferences = getSharedPreferences("UsuarioInstagram", Context.MODE_PRIVATE);
+                String usuarioInstagram = sharedPreferences.getString("cuenta","");
+
+                if (usuarioInstagram == "") {
+                    Toast.makeText(this, getResources().getString(R.string.mensaje_agregar_cuenta), Toast.LENGTH_SHORT).show();
+                } else {
+                    FirebaseInstanceId.getInstance().getInstanceId()
+                            .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                                    if (!task.isSuccessful()) {
+                                        Log.w(TAG, "getInstanceId failed", task.getException());
+                                        return;
+                                    }
+
+                                    String id_dispositivo = task.getResult().getToken();
+
+                                    enviarTokenRegistro(usuarioInstagram, id_dispositivo);
                                 }
-
-                                String id_dispositivo = task.getResult().getToken();
-
-                                enviarTokenRegistro(ConstantesRestAPI.ID_USER_INSTAGRAM, id_dispositivo);
-                            }
-                        });
+                            });
+                }
 
                 break;
             case R.id.mRanking:
@@ -165,6 +175,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("ID_FIREBASE", usuarioResponse.getId_firebase());
                 Log.d("ID_DISPOSITIVO", usuarioResponse.getId_dispositivo());
                 Log.d("ID_USUARIO_INSTAGRAM", usuarioResponse.getId_usuario_instagram());
+
+                Toast.makeText(MainActivity.this, getResources().getString(R.string.agregar_cuenta_firebase), Toast.LENGTH_SHORT).show();
             }
 
             @Override

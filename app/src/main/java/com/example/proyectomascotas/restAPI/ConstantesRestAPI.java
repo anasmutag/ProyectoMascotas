@@ -9,6 +9,4 @@ public class ConstantesRestAPI {
 
     public static final String ROOT_URL_NOTIFICATION = "https://pacific-bastion-13781.herokuapp.com/";
     public static final String KEY_POST_ID_TOKEN = "registrar-usuario";
-
-    public static final String ID_USER_INSTAGRAM = "1234567890";
 }
