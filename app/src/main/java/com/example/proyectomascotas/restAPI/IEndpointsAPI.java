@@ -1,5 +1,6 @@
 package com.example.proyectomascotas.restAPI;
 
+import com.example.proyectomascotas.restAPI.model.LikeResponse;
 import com.example.proyectomascotas.restAPI.model.MascotaResponse;
 import com.example.proyectomascotas.restAPI.model.UsuarioResponse;
 
@@ -16,4 +17,8 @@ public interface IEndpointsAPI {
     @FormUrlEncoded
     @POST(ConstantesRestAPI.KEY_POST_ID_TOKEN)
     Call<UsuarioResponse> registrarTokenID(@Field("user") String id_usuario_instagram, @Field("token") String id_dispositivo);
+
+    @FormUrlEncoded
+    @POST(ConstantesRestAPI.KEY_POST_LIKE_FOTO)
+    Call<LikeResponse> registrarLike(@Field("foto") String id_foto_instagram, @Field("user") String id_usuario_instagram, @Field("token") String id_dispositivo);
 }

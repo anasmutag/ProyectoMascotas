@@ -81,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.getTabAt(0).setIcon(R.drawable.home);
         tabLayout.getTabAt(1).setIcon(R.drawable.year_of_dog);
+
+        if (getIntent().getAction().equals("OPEN_TAB_PERFIL")) {
+            viewPager.setCurrentItem(1);
+        }
     }
 
     @Override
@@ -185,6 +189,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
