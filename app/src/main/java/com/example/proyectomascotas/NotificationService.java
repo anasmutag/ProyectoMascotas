@@ -8,12 +8,14 @@ import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.app.NotificationCompat.WearableExtender;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class NotificationService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
+    private static final int NOTIFICATION_ID = 001;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -32,7 +34,29 @@ public class NotificationService extends FirebaseMessagingService {
         Intent i = new Intent(this, MainActivity.class);
         i.setAction("OPEN_TAB_PERFIL");
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
+
+        Intent ivp = new Intent();
+        ivp.setAction("VER_PERFIL");
+        PendingIntent pendingIntentVP = PendingIntent.getBroadcast(this, 0, ivp, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Intent ivu = new Intent();
+        ivu.setAction("VER_USUARIO");
+        PendingIntent pendingIntentVU = PendingIntent.getBroadcast(this, 0, ivu, PendingIntent.FLAG_UPDATE_CURRENT);
+
         Uri sonido = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        NotificationCompat.Action actionvp =
+                new NotificationCompat.Action.Builder(R.drawable.home, getString(
+                        R.string.texto_ver_perfil), pendingIntentVP)
+                .build();
+
+        NotificationCompat.Action actionvu =
+                new NotificationCompat.Action.Builder(R.drawable.year_of_dog, getString(
+                        R.string.texto_ver_usuario), pendingIntentVU)
+                .build();
+
+        NotificationCompat.WearableExtender wearableExtender =
+                new NotificationCompat.WearableExtender();
 
         NotificationCompat.Builder notificacion = new NotificationCompat.Builder(this, "0")
                 .setSmallIcon(R.drawable.answers)
@@ -41,10 +65,13 @@ public class NotificationService extends FirebaseMessagingService {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setSound(sonido)
                 .setContentIntent(pendingIntent)
-                .setAutoCancel(true);
+                .setAutoCancel(true)
+                .extend(wearableExtender).addAction(actionvp)
+                .extend(wearableExtender).addAction(actionvu);
+                //.addAction(R.drawable.ic_full_hand_cursor, getString(R.string.texto_accion_toque), pendingIntent);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(0, notificacion.build());
+        notificationManager.notify(NOTIFICATION_ID, notificacion.build());
     }
 
     @Override

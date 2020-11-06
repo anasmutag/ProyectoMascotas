@@ -29,4 +29,6 @@
     <string name="menu_notificaciones">Recibir Notificaciones</string>
     <string name="mensaje_agregar_cuenta">Agregar cuenta en "Configurar Cuenta" en el menú de opciones</string>
     <string name="agregar_cuenta_firebase">Cuenta de Instagram agregada con exito a FireBase</string>
+    <string name="texto_ver_perfil">Ver Perfil</string>
+    <string name="texto_ver_usuario">Ver Usuario</string>
 </resources>

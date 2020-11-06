@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    public static int indexTab = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     private void setUpViewPager() {
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragment()));
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.setCurrentItem(indexTab);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.home);
         tabLayout.getTabAt(1).setIcon(R.drawable.year_of_dog);
@@ -90,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_opciones, menu);
+
+        indexTab = 0;
 
         return true;
     }

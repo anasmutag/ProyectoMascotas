@@ -53,6 +53,12 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <receiver android:name=".AccionMascota">
+            <intent-filter>
+                <action android:name="VER_PERFIL" />
+                <action android:name="VER_USUARIO" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
